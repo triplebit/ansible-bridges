@@ -1,0 +1,9 @@
+[submodule "roles/webtunnel"]
+	path = roles/webtunnel
+	url = https://github.com/nvjacobo/webtunnel
+[submodule "roles/snowflake"]
+	path = roles/snowflake
+	url = https://github.com/nvjacobo/snowflake
+[submodule "roles/obfs4"]
+	path = roles/obfs4
+	url = https://github.com/triplebit/ansible-obfs4

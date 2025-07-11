@@ -1,0 +1,36 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+	"name": "triplebit-bridges",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	"postCreateCommand": {
+		"Fix Volume Permissions": "sudo chown -R $(whoami): /commandhistory",
+		"Install Ansible general": "ansible-galaxy collection install community.general"
+	},
+	"mounts": [
+		{
+			"source": "${localEnv:SSH_AUTH_SOCK}",
+			"target": "/agent.sock",
+			"type": "bind"
+		},
+		{
+			"source": "triplebit-bridges-bashhistory",
+			"target": "/commandhistory",
+			"type": "volume"
+		}
+	],
+	"containerEnv": {
+		"SSH_AUTH_SOCK": "/agent.sock"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"redhat.ansible",
+				"redhat.vscode-yaml"
+			]
+		}
+	}
+}
