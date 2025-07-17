@@ -1,0 +1,7 @@
+BridgeRelay 1
+ORPort 3389
+ServerTransportPlugin meek exec /usr/local/bin/meek-server --acme-hostnames cdn-27.privacyguides.net --acme-email cdn27@triplebit.net --log /var/log/tor/meek-server.log
+ExtORPort auto
+ContactInfo {{ bridge_mail }}
+Nickname {{ bridge_name }}
+SocksPort 0

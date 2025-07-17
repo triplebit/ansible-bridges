@@ -48,3 +48,8 @@
   name: Install obfs4
   roles:
     - obfs4
+
+- hosts: meek
+  name: Install meek
+  roles:
+    - meek
